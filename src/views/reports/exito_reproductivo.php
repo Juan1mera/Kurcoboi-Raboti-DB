@@ -8,30 +8,30 @@ $reporte = getExitoReproductivo();
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Reporte de Éxito Reproductivo - Granja Ganadera</title>
+    <title>Отчет об успехе воспроизводства - Reporte de Éxito Reproductivo</title>
     <link rel="stylesheet" href="../../src/public/css/styles.css">
 </head>
 <body>
     <div class="form">
-        <div class="title">Reporte de Éxito Reproductivo <span>Por Especie y Raza</span></div>
-        <a href="/" class="button">Volver</a>
+        <div class="title">Отчет об успехе воспроизводства (Reporte de Éxito Reproductivo) <span>По виду и породе (Por Especie y Raza)</span></div>
+        <a href="/" class="button">Вернуться (Volver)</a>
     </div>
 
     <div class="table-container">
         <table>
             <thead>
                 <tr>
-                    <th>Especie</th>
-                    <th>Raza</th>
-                    <th>Total Gestaciones</th>
-                    <th>Partos Exitosos</th>
-                    <th>Promedio de Crías</th>
-                    <th>Estado</th>
+                    <th>Вид (Especie)</th>
+                    <th>Порода (Raza)</th>
+                    <th>Всего беременностей (Total Gestaciones)</th>
+                    <th>Успешные роды (Partos Exitosos)</th>
+                    <th>Среднее количество потомства (Promedio de Crías)</th>
+                    <th>Состояние (Estado)</th>
                 </tr>
             </thead>
             <tbody>
                 <?php if (empty($reporte)): ?>
-                    <tr><td colspan="6">No hay datos disponibles.</td></tr>
+                    <tr><td colspan="6">Нет данных (No hay datos disponibles).</td></tr>
                 <?php else: ?>
                     <?php foreach ($reporte as $row): ?>
                         <tr>

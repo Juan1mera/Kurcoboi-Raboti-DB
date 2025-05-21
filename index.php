@@ -158,7 +158,7 @@ if (empty($parts[0])) {
                 </div>
             </section>
 
-            <section><!-- Reportes✅ -->
+            <section><!-- Reportes -->
                 <h2>Reportes</h2>
                 <div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center;">
                     <a href="reports/balance_financiero" class="button">Reporte Financiero</a>
