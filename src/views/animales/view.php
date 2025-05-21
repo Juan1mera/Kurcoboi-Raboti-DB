@@ -13,25 +13,25 @@ try {
         <link rel="stylesheet" href="/src/public/css/styles.css">
     </head>
     <body>
-        <h1>Lista de Animales</h1>
+        <h1>Список животных - Lista de Animales</h1>
         <table>
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Código</th>
-                    <th>Raza</th>
-                    <th>Corral</th>
-                    <th>Sexo</th>
-                    <th>Peso (kg)</th>
-                    <th>Estado de Salud</th>
-                    <th>Fecha de Nacimiento</th>
-                    <th>Fecha de Ingreso</th>
+                    <th>Код (Código)</th>
+                    <th>Порода (Raza)</th>
+                    <th>Загон (Corral)</th>
+                    <th>Пол (Sexo)</th>
+                    <th>Вес (кг) (Peso (kg))</th>
+                    <th>Состояние здоровья (Estado de Salud)</th>
+                    <th>Дата рождения (Fecha de Nacimiento)</th>
+                    <th>Дата поступления (Fecha de Ingreso)</th>
                 </tr>
             </thead>
             <tbody>
                 <?php if (empty($animales)): ?>
                     <tr>
-                        <td colspan="9">No hay animales registrados.</td>
+                        <td colspan="9">Нет зарегистрированных животных (No hay animales registrados).</td>
                     </tr>
                 <?php else: ?>
                     <?php foreach ($animales as $animal): ?>

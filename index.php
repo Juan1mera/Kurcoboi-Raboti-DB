@@ -21,14 +21,153 @@ if (empty($parts[0])) {
         <div class="form">
             <div class="title">Granja Ganadera <span>Sistema de Gestión</span></div>
             <p style="color: var(--font-color); font-size: 16px;">Bienvenido al sistema de gestión de la granja. Selecciona una opción:</p>
-            <div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center;">
-                <a href="animales/view" class="button">Ver Animales</a>
-                <a href="reports/balance_financiero" class="button">Reporte Financiero</a>
-                <a href="reports/consumo_alimentos" class="button">Consumo de Alimentos</a>
-                <a href="reports/estado_salud_animales" class="button">Estado de Salud</a>
-                <a href="reports/exito_reproductivo" class="button">Éxito Reproductivo</a>
-                <a href="reports/produccion_por_tipo_corral" class="button">Producción por Corral</a>
-            </div>
+
+            <section><!-- Animales✅ -->
+                <h2>Animales</h2>
+                <div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center;">
+                    <a href="animales/view" class="button">Ver Animales</a>
+                    <a href="animales/create" class="button">Crear Animal</a>
+                </div>
+            </section>
+
+            <section><!-- Clientes✅ -->
+                <h2>Clientes</h2>
+                <div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center;">
+                    <a href="clientes/view" class="button">Ver Clientes</a>
+                    <a href="clientes/create" class="button">Crear Cliente</a>
+                </div>
+            </section>
+
+            <section><!-- Consumo Almentos -->
+                <h2>Animales</h2>
+                <div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center;">
+                    <a href="animales/view" class="button">Ver Animales</a>
+                    <a href="animales/create" class="button">Crear Animal</a>
+                </div>
+            </section>
+
+            <section><!-- Corrales -->
+                <h2>Animales</h2>
+                <div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center;">
+                    <a href="animales/view" class="button">Ver Animales</a>
+                    <a href="animales/create" class="button">Crear Animal</a>
+                </div>
+            </section>
+
+            <section><!-- Empleados -->
+                <h2>Animales</h2>
+                <div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center;">
+                    <a href="animales/view" class="button">Ver Animales</a>
+                    <a href="animales/create" class="button">Crear Animal</a>
+                </div>
+            </section>
+
+            <section><!-- Especies -->
+                <h2>Animales</h2>
+                <div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center;">
+                    <a href="animales/view" class="button">Ver Animales</a>
+                    <a href="animales/create" class="button">Crear Animal</a>
+                </div>
+            </section>
+
+            <section><!-- Finanzas -->
+                <h2>Animales</h2>
+                <div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center;">
+                    <a href="animales/view" class="button">Ver Animales</a>
+                    <a href="animales/create" class="button">Crear Animal</a>
+                </div>
+            </section>
+
+            <section><!-- Produccion -->
+                <h2>Animales</h2>
+                <div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center;">
+                    <a href="animales/view" class="button">Ver Animales</a>
+                    <a href="animales/create" class="button">Crear Animal</a>
+                </div>
+            </section>
+
+            <section><!-- Productos Inventario -->
+                <h2>Animales</h2>
+                <div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center;">
+                    <a href="animales/view" class="button">Ver Animales</a>
+                    <a href="animales/create" class="button">Crear Animal</a>
+                </div>
+            </section>
+
+            <section><!-- Razas -->
+                <h2>Animales</h2>
+                <div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center;">
+                    <a href="animales/view" class="button">Ver Animales</a>
+                    <a href="animales/create" class="button">Crear Animal</a>
+                </div>
+            </section>
+
+            <section><!-- Registro VAcunas -->
+                <h2>Animales</h2>
+                <div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center;">
+                    <a href="animales/view" class="button">Ver Animales</a>
+                    <a href="animales/create" class="button">Crear Animal</a>
+                </div>
+            </section>
+
+            <section><!-- Vacunas -->
+                <h2>Animales</h2>
+                <div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center;">
+                    <a href="animales/view" class="button">Ver Animales</a>
+                    <a href="animales/create" class="button">Crear Animal</a>
+                </div>
+            </section>
+
+            <section><!-- Detalles Venta -->
+                <h2>Animales</h2>
+                <div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center;">
+                    <a href="animales/view" class="button">Ver Animales</a>
+                    <a href="animales/create" class="button">Crear Animal</a>
+                </div>
+            </section>
+
+            <section><!-- Reproduccion-->
+                <h2>Animales</h2>
+                <div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center;">
+                    <a href="animales/view" class="button">Ver Animales</a>
+                    <a href="animales/create" class="button">Crear Animal</a>
+                </div>
+            </section>
+
+            <section><!-- Ventas -->
+                <h2>Animales</h2>
+                <div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center;">
+                    <a href="animales/view" class="button">Ver Animales</a>
+                    <a href="animales/create" class="button">Crear Animal</a>
+                </div>
+            </section>
+
+            <section><!-- Tratamientos -->
+                <h2>Animales</h2>
+                <div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center;">
+                    <a href="animales/view" class="button">Ver Animales</a>
+                    <a href="animales/create" class="button">Crear Animal</a>
+                </div>
+            </section>
+
+            <section><!-- Tareas -->
+                <h2>Animales</h2>
+                <div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center;">
+                    <a href="animales/view" class="button">Ver Animales</a>
+                    <a href="animales/create" class="button">Crear Animal</a>
+                </div>
+            </section>
+
+            <section><!-- Reportes✅ -->
+                <h2>Reportes</h2>
+                <div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center;">
+                    <a href="reports/balance_financiero" class="button">Reporte Financiero</a>
+                    <a href="reports/consumo_alimentos" class="button">Consumo de Alimentos</a>
+                    <a href="reports/estado_salud_animales" class="button">Estado de Salud</a>
+                    <a href="reports/exito_reproductivo" class="button">Éxito Reproductivo</a>
+                    <a href="reports/produccion_por_tipo_corral" class="button">Producción por Corral</a>
+                </div>
+            </section>
         </div>
     </body>
     </html>

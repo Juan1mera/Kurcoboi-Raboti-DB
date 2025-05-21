@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__ . '/db_connect.php';
+require_once __DIR__ . '../../db_connect.php';
 
 function createCliente($nombre, $telefono, $direccion, $email) {
     try {
