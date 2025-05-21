@@ -181,7 +181,9 @@ tr:hover {
 /* Estilo para botones genéricos */
 .button {
     cursor: pointer;
-    width: 120px;
+    width: auto;
+    padding-left: 5px;
+    padding-right: 5px;
     height: 40px;
     border-radius: 5px;
     border: 2px solid var(--main-color);
