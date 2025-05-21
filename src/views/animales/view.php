@@ -41,7 +41,7 @@ try {
                             <td><?php echo htmlspecialchars($animal['nombre_raza']); ?></td>
                             <td><?php echo htmlspecialchars($animal['nombre_corral']); ?></td>
                             <td><?php echo htmlspecialchars($animal['sexo']); ?></td>
-                            <td><?php echo htmlspecialchars($animal['peso'] ?? 'N/A'); ?></td>
+                            <td><?php echo htmlspecialchars($animal['peso'] ?? 'N/A'); ?> Kg</td>
                             <td><?php echo htmlspecialchars($animal['estado_salud']); ?></td>
                             <td><?php echo htmlspecialchars($animal['fecha_nacimiento']); ?></td>
                             <td><?php echo htmlspecialchars($animal['fecha_ingreso']); ?></td>
