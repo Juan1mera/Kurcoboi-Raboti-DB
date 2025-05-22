@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__ . '/db_connect.php';
+require_once __DIR__ . './../db_connect.php';
 
 function createVenta($id_cliente, $fecha, $estado, $monto_total) {
     try {

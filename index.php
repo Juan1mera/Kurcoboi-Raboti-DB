@@ -38,6 +38,13 @@ if (empty($parts[0])) {
                 </div>
             </section>
 
+            <section><!-- Ventas -->
+                <h2>Ventas</h2>
+                <div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center;">
+                    <a href="ventas/view" class="button">Ver Ventas</a>
+                    <a href="ventas/create" class="button">Crear Ventas</a>
+                </div>
+            </section>
 
             <section><!-- Reportes -->
                 <h2>Reportes</h2>

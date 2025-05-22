@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__ . '/db_connect.php';
+require_once __DIR__ . './../db_connect.php';
 
 function createProductoInventario($nombre, $tipo, $cantidad, $unidad_medida, $precio_unitario, $stock_minimo, $id_especie) {
     try {
