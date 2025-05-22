@@ -4,6 +4,8 @@
     --font-color: #323232;
     --font-color-sub: #666;
     --bg-color: #fff;
+    --azul: #5e5cbd;
+    --rojo: #ff2d33;
     --main-color: #323232;
 }
 
@@ -127,6 +129,34 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--font-color);
     cursor: pointer;
 }
+.button-delete {
+    width: auto;
+    margin: 5px;
+    padding: 5px 20px;
+    height: 40px;
+    border-radius: 5px;
+    border: 2px solid var(--main-color);
+    background-color: var(--rojo);
+    box-shadow: 4px 4px var(--main-color);
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--bg-color);
+    cursor: pointer;
+}
+.button-edit {
+    width: auto;
+    margin: 5px;
+    padding: 5px 20px;
+    height: 40px;
+    border-radius: 5px;
+    border: 2px solid var(--main-color);
+    background-color: var(--azul);
+    box-shadow: 4px 4px var(--main-color);
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--bg-color);
+    cursor: pointer;
+}
 
 .button-log:active, .button-confirm:active {
     box-shadow: 0px 0px var(--main-color);
@@ -204,6 +234,11 @@ tr:hover {
 .button:active {
     box-shadow: 0px 0px var(--main-color);
     transform: translate(3px, 3px);
+}
+
+.button .edit {
+    background-color: var(--bg-color);
+
 }
 
 /* Estilo para selects */
