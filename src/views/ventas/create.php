@@ -3,6 +3,7 @@ require_once __DIR__ . '/../../lib/db/Ventas/Ventas.php';
 require_once __DIR__ . '/../../lib/db/Clientes/Clientes.php';
 require_once __DIR__ . '/../../lib/db/Productos_Inventario/Productos_Inventario.php';
 require_once __DIR__ . '/../../lib/db/Detalle_Ventas/Detalle_Ventas.php';
+require_once __DIR__ . '/../../lib/db/Finanzas/Finanzas.php';
 
 // Initialize variables for form handling
 $success = false;
@@ -26,7 +27,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // Validate and filter detalles
             $valid_detalles = [];
             foreach ($detalles as $index => $detalle) {
-                // Check if required keys exist and are valid
                 if (
                     isset($detalle['tipo_producto'], $detalle['cantidad'], $detalle['precio_unitario']) &&
                     is_string($detalle['tipo_producto']) && trim($detalle['tipo_producto']) !== '' &&
@@ -43,17 +43,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if (!empty($valid_detalles)) {
                 // Create venta
                 $ventaId = createVenta($id_cliente, $fecha, $estado, $monto_total);
-                
+                error_log("createVenta($ventaId) result: success");
+
                 // Create detalles
                 foreach ($valid_detalles as $detalle) {
-                    createDetalleVenta(
+                    $detalleId = createDetalleVenta(
                         $ventaId,
                         $detalle['id_producto'] ?? '',
                         $detalle['tipo_producto'],
                         $detalle['cantidad'],
                         $detalle['precio_unitario']
                     );
+                    error_log("createDetalleVenta($detalleId) result: success");
                 }
+
+                // Create Finanzas transaction
+                $descripcion = "Venta de productos (ID: $ventaId)";
+                $transaccionId = createTransaccion(
+                    'Ingreso',
+                    $monto_total,
+                    $fecha,
+                    $descripcion,
+                    $ventaId,
+                    null
+                );
+                error_log("createTransaccion($transaccionId) for venta $ventaId result: success");
+
                 $success = true;
             } else {
                 $error = 'Por favor, agrega al menos un detalle completo (Tipo Producto, Cantidad > 0, Precio Unitario ≥ 0).';
@@ -63,6 +78,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     } catch (Exception $e) {
         $error = $e->getMessage();
+        error_log("Exception in POST handler: " . $e->getMessage());
     }
 }
 

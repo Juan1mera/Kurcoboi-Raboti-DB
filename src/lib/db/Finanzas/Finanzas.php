@@ -1,6 +1,5 @@
 <?php
-
-require_once __DIR__ . '/db_connect.php';
+require_once __DIR__ . './../db_connect.php';
 
 function createTransaccion($tipo, $monto, $fecha, $descripcion, $id_venta, $id_producto) {
     try {
@@ -45,6 +44,18 @@ function getTransaccionById($id_transaccion) {
     }
 }
 
+function getTransaccionByVentaId($id_venta) {
+    try {
+        $conn = getDBConnection();
+        $sql = "SELECT * FROM Finanzas WHERE id_venta = :id_venta";
+        $stmt = $conn->prepare($sql);
+        $stmt->execute([':id_venta' => $id_venta]);
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    } catch (PDOException $e) {
+        throw new Exception("Error al obtener transacción por id_venta: " . $e->getMessage());
+    }
+}
+
 function updateTransaccion($id_transaccion, $tipo, $monto, $fecha, $descripcion, $id_venta, $id_producto) {
     try {
         $conn = getDBConnection();
@@ -72,6 +83,27 @@ function updateTransaccion($id_transaccion, $tipo, $monto, $fecha, $descripcion,
     }
 }
 
+function updateTransaccionByVentaId($id_venta, $tipo, $monto, $fecha, $descripcion, $id_producto) {
+    try {
+        $transaccion = getTransaccionByVentaId($id_venta);
+        if ($transaccion) {
+            return updateTransaccion(
+                $transaccion['id_transaccion'],
+                $tipo,
+                $monto,
+                $fecha,
+                $descripcion,
+                $id_venta,
+                $id_producto
+            );
+        } else {
+            return createTransaccion($tipo, $monto, $fecha, $descripcion, $id_venta, $id_producto);
+        }
+    } catch (PDOException $e) {
+        throw new Exception("Error al actualizar/crear transacción por id_venta: " . $e->getMessage());
+    }
+}
+
 function deleteTransaccion($id_transaccion) {
     try {
         $conn = getDBConnection();
@@ -83,5 +115,4 @@ function deleteTransaccion($id_transaccion) {
         throw new Exception("Error al eliminar transacción: " . $e->getMessage());
     }
 }
-
 ?>

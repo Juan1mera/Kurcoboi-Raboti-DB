@@ -3,6 +3,7 @@ require_once __DIR__ . '/../../lib/db/Ventas/Ventas.php';
 require_once __DIR__ . '/../../lib/db/Clientes/Clientes.php';
 require_once __DIR__ . '/../../lib/db/Productos_Inventario/Productos_Inventario.php';
 require_once __DIR__ . '/../../lib/db/Detalle_Ventas/Detalle_Ventas.php';
+require_once __DIR__ . '/../../lib/db/Finanzas/Finanzas.php';
 
 // Initialize variables for form handling
 $success = false;
@@ -59,7 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !$error) {
                 }
             }
 
-            // Process details even if venta update didn't change rows
+            // Process details
             $details_updated = false;
             if (!empty($valid_detalles) || !empty($delete_detalles)) {
                 // Delete selected detalles
@@ -95,11 +96,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !$error) {
                 }
             }
 
-            if ($venta_updated || $details_updated) {
+            // Update or create Finanzas transaction
+            $descripcion = "Venta de productos (ID: $id_venta)";
+            $transaccion_result = updateTransaccionByVentaId(
+                $id_venta,
+                'Ingreso',
+                $monto_total,
+                $fecha,
+                $descripcion,
+                null
+            );
+            error_log("updateTransaccionByVentaId($id_venta) result: " . ($transaccion_result ? 'success' : 'failed'));
+
+            if ($venta_updated || $details_updated || $transaccion_result) {
                 $success = true;
                 $venta = getVentaById($id_venta);
             } else {
-                $error = 'No se realizaron cambios en la venta ni en los detalles.';
+                $error = 'No se realizaron cambios en la venta, los detalles ni la transacción financiera.';
             }
         } else {
             $error = 'Por favor, completa todos los campos obligatorios.';
